@@ -5,6 +5,31 @@ alias ScreenOn='adb shell input keyevent 26'
 alias Enter='adb shell input keyevent 66'
 alias EnterPass='adb shell input keyevent 82'
 #############################################
+echo "#############################"
+echo " Yours device can be erased  "
+echo "#############################"
+echo "\# You haven  been warned #/ "
+echo " \#   Enter  to continue #/  "
+echo "  \#   CTRL C for Exit  #/   "
+echo "   \#    Your choice   #/    "
+echo "    \#       is       #/     "
+echo "     \#     here     #/      "
+echo "      \#            #/       "
+echo "       \#    ||    #/        "
+echo "        \#   ||   #/         "
+echo "         \#  ||  #/          "
+echo "          \# \/ #/           "
+echo "           \#  #/            "
+echo "            \##/             "
+echo ""
+echo "            @@@@             "
+echo "           @    @            "
+echo "           @    @            "
+echo "            @@@@             "
+read z
+echo "     You agree with risk     "
+echo "        Lets rock it !       "
+
 #Connected=$(adb devices |grep -m2 "device" |tail -n1|cut -c 10-16)
 
 #while [ $Connected != "device" ] ;
