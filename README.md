@@ -2,7 +2,7 @@
 I am not responsible for erasing/blocking the device  
 keep in mind if you tested lots of unworking combinations  
 !!! ***yours device can be erased*** !!!  
-           ! you be warned !   
+           ! You have been warned !   
 
 # ADB-PIN-CRACKER
 ### [APC] Android Pin Cracker
