@@ -3,9 +3,11 @@
   
 This utility method is bruteforcing digits  
 
-### Mods:  
-  - 4-digits  
-  - 6-digits  
+### Modes:  
+  - 4-Digits  
+  - 6-Digits  
+  - 4-Digits WUC  ( Without Unlock Check: good for custom roms)
+  - 6-Digits WUC  ( Without Unlock Check: good for custom roms)
   
 ### You need  
  - device with ADB allowed  
