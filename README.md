@@ -13,7 +13,7 @@ This utility method is bruteforcing digits
 
 ---
 Tested on
-  - android 10 EMUI 11.0.0
+  - android 10 EMUI 11.0.0 (6-digits)  
 
 
 ---
