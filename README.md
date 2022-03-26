@@ -10,6 +10,8 @@ This utility method is bruteforcing digits
   - 6-Digits WUC  ( Without Unlock Check: good for custom roms)
   
 ### You need  
+ - cable
+ - package android-tools-adb 
  - device with ADB allowed  
  - authorize device with yours machine  
 
