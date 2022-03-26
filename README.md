@@ -3,7 +3,7 @@
   
 This utility method is bruteforcing digits  
 
-Mods:  
+### Mods:  
   - 4-digits  
   - 6-digits  
   
