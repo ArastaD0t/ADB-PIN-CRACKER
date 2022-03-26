@@ -1,7 +1,8 @@
 # :warning: Warning :warning:  
 I am not responsible for erasing/blocking the device  
 keep in mind if you tested lots of unworking combinations  
-yours device can be erased !!!  
+!!! ***yours device can be erased*** !!!  
+           ! you be warned !   
 
 # ADB-PIN-CRACKER
 ### [APC] Android Pin Cracker
