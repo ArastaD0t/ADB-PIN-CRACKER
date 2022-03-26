@@ -3,8 +3,8 @@
   
 This utility method is bruteforcing digits  
   Mods:  
-       - 4-digits  
-       - 6-digits  
+      - 4-digits  
+      - 6-digits  
   
 ### You need  
  - device with ADB allowed  
