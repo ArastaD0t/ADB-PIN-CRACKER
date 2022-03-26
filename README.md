@@ -12,6 +12,11 @@ This utility method is bruteforcing digits
  - authorize device with yours machine  
 
 ---
+Tested on
+  - android 10 EMUI 11.0.0
+
+
+---
 ToDo
   - test first common used pins  
   - ~~fix unlock status testing method~~  
