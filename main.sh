@@ -147,7 +147,7 @@ fi
 
 	;;
   3)
-	echo "[APC] selected 4-Digits WUC mode"
+c	echo "[APC] selected 4-Digits WUC mode"
 	gen=10000
 	EnterPass
 
